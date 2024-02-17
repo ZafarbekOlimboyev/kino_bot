@@ -13,7 +13,7 @@ async def main():
     PROXY = 'http://proxy.server:3128/'
     session = AiohttpSession(proxy=PROXY)
     bot = Bot(token=TOKEN)
-    dp = Dispatcher()
+    dp = Dispatcher(skip_updates=True)
     await bot.set_my_commands(commands=[
         BotCommand(command="start", description="Botni qayta ishga tushurish")
     ])
