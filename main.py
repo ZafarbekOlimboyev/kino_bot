@@ -8,11 +8,10 @@ from hendlers.cmd_c import cmd_co
 from hendlers.msg_c import msg_co
 from hendlers.reg_hendlers import reg_router
 from hendlers.admin import admin_co
-# from aiogram.client.session.aiohttp import AiohttpSession
-# PROXY = {'proxy_url': 'socks5://t2.learn.python.ru:1080',
-#     'urllib3_proxy_kwargs': {'username': 'learn', 'password': 'python'}}
+from aiogram.client.session.aiohttp import AiohttpSession
 async def main():
-    # session = AiohttpSession(proxy=PROXY)
+    PROXY = 'http://proxy.server:3128/'
+    session = AiohttpSession(proxy=PROXY)
     bot = Bot(token=TOKEN)
     dp = Dispatcher()
     await bot.set_my_commands(commands=[
